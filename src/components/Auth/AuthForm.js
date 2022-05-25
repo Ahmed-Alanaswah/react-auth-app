@@ -66,7 +66,7 @@ const AuthForm = () => {
         );
         authCtx.login(data.idToken, expirationTime.toISOString());
         localStorage.setItem("token", data.idToken);
-
+        localStorage.setItem("expirationTime", expirationTime.toISOString());
         history.replace("/");
       })
       .catch((err) => alert(err.message));
